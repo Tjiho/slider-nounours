@@ -10,20 +10,37 @@ function Nounours(element,time)
         element.classList.add("nounours_conteneur");
         var images = this.element.getElementsByTagName("img");
         
-        
+        //on clean si le slider est déja lancé
+        var before = element.getElementsByClassName("before")[0] || null;
+        if(before != null )
+        {
+            before.parentElement.removeChild(before);
+        }
 
+        var after = element.getElementsByClassName("after")[0] || null;
+        if(after != null )
+        {
+            after.parentElement.removeChild(after);
+        }
+        
+        clearInterval(this.timer);
+
+        //on verifie qu'il y a bien des images
         if(images.length > 1)
         {
+            //creation de la fleche gauche
             var before = document.createElement("div");
             before.classList.add("before");    
             element.insertBefore(before, element.childNodes[0]); 
             before.addEventListener("click",this.precedent,false);
 
+            //creation de la flèche droite
             var after = document.createElement("div");
             after.classList.add("after");    
             element.appendChild(after);
             after.addEventListener("click",this.suivant,false);
 
+            //on demmare l'animation
             this.selection(images[0]);
             this.timer = setInterval(this.suivant,time);        
         
@@ -33,20 +50,21 @@ function Nounours(element,time)
             console.error("no images in nounours slider !! ");
         }
     }
-
+    
+    //fait l'animation
     this.selection = function(imageEnCours)
     {
+        //récuperation de l'image suivante
         imageSuivant = imageEnCours.nextElementSibling 
-        if(imageSuivant == null || imageSuivant.tagName != "IMG")
+        if(imageSuivant == null || imageSuivant.tagName != "IMG")//si il y'en a pas... on prend la première
             imageSuivant = this.element.getElementsByTagName("img")[0];
         
+        //récupération de l'image précédente
         imagePrecedent = imageEnCours.previousElementSibling;
-        if(imagePrecedent == null || imagePrecedent.tagName != "IMG")
-        {
+        if(imagePrecedent == null || imagePrecedent.tagName != "IMG")//si il y en a pas... on prend la dernière
             imagePrecedent = this.dernierElement(this.element.getElementsByTagName("img"));
-        }
             
-        
+        //on fait les oprations si l'élément est bien une image
         if(imageEnCours.tagName == "IMG")
         {
 
@@ -62,7 +80,7 @@ function Nounours(element,time)
             imageEnCours.classList.add("nounours_encours");
             imagePrecedent.classList.add("nounours_precedent");
         }
-        else
+        else // sinon on prend l'élément suivant
         {
             this.selection(imageSuivant);
         }

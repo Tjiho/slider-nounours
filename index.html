@@ -2,9 +2,11 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="nounours.css" />
+        <link rel="stylesheet" href="style.css" />
         <script src="nounours.js"></script>
     </head>
     <body>
+        <!-- le slider -->
         <div id="nounours">
             <img src="img/tata.jpg"/>
             <img src="img/titi.jpg"/>
@@ -12,10 +14,11 @@
             <img src="img/tutu.jpg"/>
             <img src="img/tyty.jpg"/>
         </div>
+
         <script>
-            var ele = document.getElementById("nounours"); 
-            slider = new Nounours(ele,3000);
-            slider.reset();
+            var ele = document.getElementById("nounours");//on selectionne l'element qui contient les images 
+            slider = new Nounours(ele,3000);//on creer le slider
+            slider.reset();//on le reset
         </script>
     </body>
 </html>

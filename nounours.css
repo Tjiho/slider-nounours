@@ -1,18 +1,16 @@
-#nounours
-{
-    height: 500px;
-    width: 1000px;
-}
-
-/*.8*/
 /*css of nounours, a js slider*/
+
+/* le slider */
+
 .nounours_conteneur
 {
-    background-color: green;
     position: relative;
     text-align: center;
     overflow-x: hidden;
 }
+
+
+/* les fleches */
 
 .nounours_conteneur .after
 {
@@ -29,8 +27,6 @@
     cursor: pointer;
 }
 
-
-
 .nounours_conteneur .before
 {
     border-top: 8px solid black;
@@ -45,6 +41,9 @@
     transform: rotate(-45deg);
 
 }
+
+
+/* les images */
 
 .nounours_conteneur img
 {
