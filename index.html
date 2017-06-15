@@ -1,0 +1,21 @@
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="nounours.css" />
+        <script src="nounours.js"></script>
+    </head>
+    <body>
+        <div id="nounours">
+            <img src="img/tata.jpg"/>
+            <img src="img/titi.jpg"/>
+            <img src="img/toto.jpg"/>
+            <img src="img/tutu.jpg"/>
+            <img src="img/tyty.jpg"/>
+        </div>
+        <script>
+            var ele = document.getElementById("nounours"); 
+            slider = new Nounours(ele,3000);
+            slider.reset();
+        </script>
+    </body>
+</html>

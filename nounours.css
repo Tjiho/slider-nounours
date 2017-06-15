@@ -1,0 +1,79 @@
+#nounours
+{
+    height: 500px;
+    width: 1000px;
+}
+
+/*.8*/
+/*css of nounours, a js slider*/
+.nounours_conteneur
+{
+    background-color: green;
+    position: relative;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.nounours_conteneur .after
+{
+    border-top: 8px solid black;
+    border-right: 8px solid black;
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top:calc(50% - 25px);
+    right: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+
+
+.nounours_conteneur .before
+{
+    border-top: 8px solid black;
+    border-left: 8px solid black;
+    content: "";
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top:calc(50% - 25px);
+    left: 20px;;
+    transform: rotate(-45deg);
+
+}
+
+.nounours_conteneur img
+{
+    max-height: 100%;
+    width: auto;
+    display: none;
+}
+
+.nounours_encours
+{
+    position: relative;
+    left: 0px;
+    right: 0px;
+    display: inline-block !important;
+}
+
+.nounours_precedent
+{
+    position: absolute;
+    right: 100%;
+    top:0px;
+    display: inline-block !important;
+}
+
+.nounours_suivant
+{
+    position: absolute;
+    left: 100%;
+    top:0px;
+    display: inline-block !important;
+}
+
