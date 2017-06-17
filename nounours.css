@@ -25,6 +25,7 @@
     right: 20px;
     transform: rotate(45deg);
     cursor: pointer;
+    z-index: 2;
 }
 
 .nounours_conteneur .before
@@ -39,7 +40,7 @@
     top:calc(50% - 25px);
     left: 20px;;
     transform: rotate(-45deg);
-
+    z-index: 2;
 }
 
 
