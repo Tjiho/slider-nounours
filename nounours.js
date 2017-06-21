@@ -55,7 +55,7 @@ function Nounours(element,time)
     this.selection = function(imageEnCours)
     {
         //récuperation de l'image suivante
-        imageSuivant = imageEnCours.nextElementSibling 
+        imageSuivant = imageEnCours.nextElementSibling
         if(imageSuivant == null || imageSuivant.tagName != "IMG")//si il y'en a pas... on prend la première
             imageSuivant = this.element.getElementsByTagName("img")[0];
         
@@ -63,13 +63,14 @@ function Nounours(element,time)
         imagePrecedent = imageEnCours.previousElementSibling;
         if(imagePrecedent == null || imagePrecedent.tagName != "IMG")//si il y en a pas... on prend la dernière
             imagePrecedent = this.dernierElement(this.element.getElementsByTagName("img"));
-            
+             
         //on fait les oprations si l'élément est bien une image
         if(imageEnCours.tagName == "IMG")
         {
 
             for(var className of ["nounours_suivant", "nounours_precedent", "nounours_encours"]){
-                for(var ele of this.element.getElementsByClassName(className))
+          	       
+		for(var ele of Array.from(this.element.getElementsByClassName(className)))
                 {
                     ele.classList.remove(className);
                 }
